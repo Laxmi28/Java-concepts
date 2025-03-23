@@ -57,6 +57,31 @@ public class StreamsIntermediateOperationsExample {
 
       // 6. skip
       System.out.println(names.stream().filter(x->x.startsWith("A")).sorted().distinct().collect(Collectors.toList()));
+
+      // 7. peek -> it does something for you
+
+      System.out.println(names.stream().map(x->x.toLowerCase()).peek(System.out::println).count());
+
+      //8. Flat map -> used to remove nesting and perform transformation on it (always returns a streams in between)
+
+      List<List<String>> ex = Arrays.asList(Arrays.asList("Apple" ,"tomato") ,
+                                            Arrays.asList("banana" ,"kiwi"),
+                                            Arrays.asList("jam" ,"cat"));
+
+
+      // to make the above nested list into a single list 
+
+      System.out.println(ex.stream().flatMap(x->x.stream()).map(x->x.toUpperCase()).collect(Collectors.toList()));
+
+       List<String> message = Arrays.asList("Hello how are u" ,"Java is a language","welcome");
+
+       //expected res -> ["Hello","how", "are," , "u" ,"Java", "is" ,"a","language","welcome"]
+
+       System.out.println(message.stream().
+                flatMap(x->Arrays.stream(x.split(" ")))
+                .map(x->x.toLowerCase())
+                .collect(Collectors.toList()));
+
     
     }
 
