@@ -41,16 +41,18 @@ public class Student {
     public static void main(String[] args) {
         List<Student> students = new ArrayList();
 
-        students.add( new Student("Alex",4.0));
+        students.add( new Student("Alice",4.0));
         students.add( new Student("Alice",2.96));
         students.add( new Student("James",2.63));
         students.add( new Student("John",4.0));
 
-        List<Student> res = students.stream().sorted(Comparator.comparing(Student::getCgpa).
-        thenComparing(Student::getName).reversed()).collect(Collectors.toList
-        ());
-
-        System.out.println(res);
+        // List<Student> res = students.stream().sorted(Comparator.comparing(Student::getCgpa).
+        // thenComparing(Student::getName).reversed()).collect(Collectors.toList
+        // ());
+        System.out.println(students);
+        List<Student> example = students.stream().sorted(Comparator.comparing(Student::getName).
+        thenComparing(Student::getCgpa).reversed()).collect(Collectors.toList());
+        System.out.println(example);
     }
 
 }

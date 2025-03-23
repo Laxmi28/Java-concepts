@@ -31,6 +31,9 @@ public class ArrayListExample {
     System.out.println(list1);  // internally uses to string method to do so
 
     list1.add(2,45);
+    list1.add(0,232);
+
+    System.out.println(list1);
 
     for (int i : list1){
         System.out.println(i);

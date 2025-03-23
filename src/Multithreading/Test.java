@@ -1,6 +1,6 @@
 package Multithreading;
 
-public class Test {
+public class Test implements Runnable {
   
     public static void main(String[] args) {
         
@@ -21,5 +21,17 @@ public class Test {
         System.out.println("the first message");
        }
 
+        
+
+    }
+    
+    
+    @Override
+    public void run() {
+        // TODO Auto-generated method stub
+
+        for ( ;;){
+            System.out.println("this is a simulation");
+        }
     }
 }
