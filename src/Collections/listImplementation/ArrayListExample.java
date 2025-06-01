@@ -59,7 +59,7 @@ public class ArrayListExample {
 
     Comparator<String> comparator = Comparator.comparing(String::length);
 
-    strList.sort(comparator.reversed()); //sort according to length 
+    strList.sort(Comparator.comparing(String::length).reversed()); //sort according to length 
     strList.get(0); // checking for the validating the index and then calling the direct access of the element --- . O(1)
     System.out.println(strList);
 

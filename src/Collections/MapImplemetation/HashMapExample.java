@@ -41,7 +41,40 @@ public class HashMapExample {
        for( Map.Entry<Integer,String> entry : test1){
         System.out.println(entry.getKey() + entry.getValue().toUpperCase());
        }
+
+
+        HashMap<Integer,Integer> mapt = new HashMap<>();
+        mapt.put(1,1);
+            mapt.put(2,1);
+
+        System.out.println(mapt.clone());
+
+
+        //longest substring characters length in the given string
+
+        String g = "abcabcbb";
+
+        int left = 0;
+        int right = 0;
+        int maxLen = 0 ;
+
+        Map<Character,Integer> result = new HashMap<>();
+
+        for ( right = 0 ; right < g.length() ; right ++){
+            char r = g.charAt(right);
+
+            if (result.containsKey(r)){
+                left = Math.max(left,result.get(r)+1);
+            }
+
+            result.put(r,right);
+            maxLen = Math.max(maxLen,right - left + 1 );
+        }
+ 
+      System.out.println(maxLen);
     }
+
+    
     
     /*
      * 
@@ -71,4 +104,10 @@ public class HashMapExample {
      * 
      * 
      */
+
+
+
+    
+
+
 }

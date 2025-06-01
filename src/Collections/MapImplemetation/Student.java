@@ -5,8 +5,9 @@ import java.util.Comparator;
 
 public class Student implements Comparable<Student> {
 
-    private String name;
+    String name;
     private Double marks;
+    public int id;
 
     public Student(String string, double d) {
             this.name = string;
